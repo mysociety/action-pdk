@@ -1,0 +1,12 @@
+name: 'Puppet Development Kit Tests'
+description: 'Run PDK commands in GitHub Actions'
+author: 'mySociety <sysadmin@mysociety.org>'
+inputs:
+  action:
+    description: 'Actions to perform, e.g. "validate", "test unit"'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.action }}
